@@ -19,6 +19,8 @@
 		DEA6439B1B5DFA9700B56912 /* product.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEA643961B5DFA9700B56912 /* product.plist */; };
 		DEA6439C1B5DFA9700B56912 /* TongYiCiCheXi.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEA643971B5DFA9700B56912 /* TongYiCiCheXi.plist */; };
 		DEA6439D1B5DFA9700B56912 /* TongYiCiPinPai.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEA643981B5DFA9700B56912 /* TongYiCiPinPai.plist */; };
+		DEC29E401B5E49C800A21841 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC29E3F1B5E49C800A21841 /* CityModel.swift */; };
+		DEC29E421B5E4C2D00A21841 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC29E411B5E4C2D00A21841 /* CountryModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		DEA643961B5DFA9700B56912 /* product.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = product.plist; sourceTree = "<group>"; };
 		DEA643971B5DFA9700B56912 /* TongYiCiCheXi.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = TongYiCiCheXi.plist; sourceTree = "<group>"; };
 		DEA643981B5DFA9700B56912 /* TongYiCiPinPai.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = TongYiCiPinPai.plist; sourceTree = "<group>"; };
+		DEC29E3F1B5E49C800A21841 /* CityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
+		DEC29E411B5E4C2D00A21841 /* CountryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,8 @@
 		DEA643911B5DDF3800B56912 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				DEC29E3F1B5E49C800A21841 /* CityModel.swift */,
+				DEC29E411B5E4C2D00A21841 /* CountryModel.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -267,9 +273,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEC29E401B5E49C800A21841 /* CityModel.swift in Sources */,
 				DEA6438F1B5DDDF300B56912 /* CityTableViewController.swift in Sources */,
 				DEA643711B5DD41600B56912 /* ViewController.swift in Sources */,
 				DEA6436F1B5DD41600B56912 /* AppDelegate.swift in Sources */,
+				DEC29E421B5E4C2D00A21841 /* CountryModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +473,7 @@
 				DEA6438A1B5DD41600B56912 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DEA6438B1B5DD41600B56912 /* Build configuration list for PBXNativeTarget "LaShouTuanGouTests" */ = {
 			isa = XCConfigurationList;
@@ -473,6 +482,7 @@
 				DEA6438D1B5DD41600B56912 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
