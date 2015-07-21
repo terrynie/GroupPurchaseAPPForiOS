@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>title</key>
+		<string>电影啊。。。。</string>
+		<key>img</key>
+		<string>p1.jpeg</string>
+		<key>desc</key>
+		<string>描述。。。</string>
+	</dict>
+    <dict>
+        <key>title</key>
+        <string>电影啊。。。。</string>
+        <key>img</key>
+        <string>p2.jpeg</string>
+        <key>desc</key>
+        <string>描述。。。</string>
+    </dict>
+    <dict>
+        <key>title</key>
+        <string>电影啊。。。。</string>
+        <key>img</key>
+        <string>p3.jpeg</string>
+        <key>desc</key>
+        <string>描述。。。</string>
+    </dict>
+    <dict>
+        <key>title</key>
+        <string>电影啊。。。。</string>
+        <key>img</key>
+        <string>p4.jpeg</string>
+        <key>desc</key>
+        <string>描述。。。</string>
+    </dict>
+    <dict>
+        <key>title</key>
+        <string>电影啊。。。。</string>
+        <key>img</key>
+        <string>p5.jpeg</string>
+        <key>desc</key>
+        <string>描述。。。</string>
+    </dict>
+    <dict>
+        <key>title</key>
+        <string>电影啊。。。。</string>
+        <key>img</key>
+        <string>p6.jpeg</string>
+        <key>desc</key>
+        <string>描述。。。</string>
+    </dict>
+    <dict>
+        <key>title</key>
+        <string>电影啊。。。。</string>
+        <key>img</key>
+        <string>p7.jpeg</string>
+        <key>desc</key>
+        <string>描述。。。</string>
+    </dict>
+</array>
+</plist>
