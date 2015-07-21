@@ -64,9 +64,12 @@ class CityTableViewController:UITableViewController,UITableViewDataSource,UITabl
         
         cell.textLabel?.text = countryMutableDictionary["name"] as? String
         
-        
-        
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        var cityMutableDictionary = self.sectionArray[section] as! NSMutableDictionary
+        return cityMutableDictionary["name"] as! String
         
         
     }
