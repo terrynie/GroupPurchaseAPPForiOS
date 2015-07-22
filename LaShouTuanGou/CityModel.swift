@@ -21,16 +21,17 @@ class CityModel: NSObject {
     func cityWithDict(dict:NSMutableDictionary){
         self.id = dict["id"] as? String
         self.name = dict["name"] as? String
-        countryArray = dict["list"] as? NSMutableArray
+//        countryArray = dict["list"] as? NSMutableArray
         
         var tempArray:NSMutableArray = dict["list"] as! NSMutableArray
         
         countryArray = NSMutableArray()
         for dictSon in tempArray {
             var countryModel:CountryModel = CountryModel(dict: dictSon as! NSMutableDictionary)
+            countryArray.addObject(countryModel)
         }
         
-        countryArray.addObject(countryArray)
+        
         
     }
     

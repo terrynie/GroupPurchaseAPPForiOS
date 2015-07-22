@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 class CityTableViewController:UITableViewController,UITableViewDataSource,UITableViewDelegate {
-    var sectionArray:NSMutableArray!
     
+    var sectionArray:NSMutableArray!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,9 +32,15 @@ class CityTableViewController:UITableViewController,UITableViewDataSource,UITabl
         var bundler:NSBundle = NSBundle.mainBundle()
         //通过查找，返回文件的路径
         var path:String = bundler.pathForResource("ChinaCity.plist", ofType: nil)!
-        self.sectionArray = NSMutableArray(contentsOfFile: path)!
+        var tempArray = NSMutableArray(contentsOfFile: path)!
         
-       
+        //数组里边放的字典，
+        sectionArray = NSMutableArray()
+        for dict in tempArray {
+            var cityModel:CityModel = CityModel(dict: dict as! NSMutableDictionary)
+            sectionArray.addObject(cityModel)
+        }
+        
         
     }
     
@@ -47,10 +53,10 @@ class CityTableViewController:UITableViewController,UITableViewDataSource,UITabl
     //每组多少行
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
-        var cityMutableDictionary:NSMutableDictionary = self.sectionArray[section] as! NSMutableDictionary
-        var countryMutableArray:NSMutableArray = cityMutableDictionary["list"] as! NSMutableArray
+        var cityModel = self.sectionArray[section] as! CityModel
+        var countryModel:NSMutableArray = cityModel.countryArray as NSMutableArray
         //根据字典的长度确定每组的行数
-        return countryMutableArray.count
+        return countryModel.count
         
     }
     
@@ -58,11 +64,11 @@ class CityTableViewController:UITableViewController,UITableViewDataSource,UITabl
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
         var cell:UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cityID") as UITableViewCell
-        var cityMutableDictionary:NSMutableDictionary = self.sectionArray[indexPath.section] as! NSMutableDictionary
-        var countryMutableArray:NSMutableArray = cityMutableDictionary["list"] as! NSMutableArray
-        var countryMutableDictionary:NSMutableDictionary = countryMutableArray[indexPath.row] as! NSMutableDictionary
+        var cityModel:CityModel = self.sectionArray[indexPath.section] as! CityModel
+        var countryModelArray:NSMutableArray = cityModel.countryArray as NSMutableArray
+        var countryModel:CountryModel = countryModelArray[indexPath.row] as! CountryModel
         
-        cell.textLabel?.text = countryMutableDictionary["name"] as? String
+        cell.textLabel?.text = countryModel.name as String
         
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator     //箭头的指示器
 //        cell.accessoryType = UITableViewCellAccessoryType.Checkmark               //对勾指示器
@@ -79,8 +85,8 @@ class CityTableViewController:UITableViewController,UITableViewDataSource,UITabl
     
     //组头的内容
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        var cityMutableDictionary = self.sectionArray[section] as! NSMutableDictionary
-        return cityMutableDictionary["name"] as? String
+        var cityModel = self.sectionArray[section] as! CityModel
+        return cityModel.name
     
     }
     
