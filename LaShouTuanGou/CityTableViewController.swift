@@ -11,35 +11,33 @@ import UIKit
 
 class CityTableViewController:UITableViewController,UITableViewDataSource,UITableViewDelegate {
     
-    var sectionArray:NSMutableArray!
+    var _sectionArray:NSMutableArray!
+    var sectionArray:NSMutableArray{
+        get{
+            
+            if self._sectionArray == nil {
+                _sectionArray = NSMutableArray()
+                var bundler:NSBundle = NSBundle.mainBundle()
+                //通过查找，返回文件的路径
+                var path:String = bundler.pathForResource("ChinaCity.plist", ofType: nil)!
+                var tempArray = NSMutableArray(contentsOfFile: path)!
+                
+                //数组里边放的字典，
+                
+                for dict in tempArray {
+                    var cityModel:CityModel = CityModel(dict: dict as! NSMutableDictionary)
+                    _sectionArray.addObject(cityModel)
+                }
+            }
+            
+            return self._sectionArray
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         
-//        var cityArray1:NSMutableArray = NSMutableArray()
-//        cityArray1.addObject("北京")
-//        cityArray1.addObject("上海")
-//        
-//        var cityArray2:NSMutableArray = NSMutableArray()
-//        cityArray2.addObject("安徽")
-//        cityArray2.addObject("江苏")
-//        cityArray2.addObject("河南")
-//        
-//        sectionArray.addObject(cityArray1)
-//        sectionArray.addObject(cityArray2)
-        
-        
-        var bundler:NSBundle = NSBundle.mainBundle()
-        //通过查找，返回文件的路径
-        var path:String = bundler.pathForResource("ChinaCity.plist", ofType: nil)!
-        var tempArray = NSMutableArray(contentsOfFile: path)!
-        
-        //数组里边放的字典，
-        sectionArray = NSMutableArray()
-        for dict in tempArray {
-            var cityModel:CityModel = CityModel(dict: dict as! NSMutableDictionary)
-            sectionArray.addObject(cityModel)
-        }
         
         
     }
@@ -62,15 +60,25 @@ class CityTableViewController:UITableViewController,UITableViewDataSource,UITabl
     
     //每行显示的数据
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+        //第一步，在缓冲中查找ID标示的cell
+        let cityID:String = "cityID"
+        var cell:UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(cityID) as? UITableViewCell
         
-        var cell:UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cityID") as UITableViewCell
+        //判断cell是否存在，如果不存在进行创建
+        if cell == nil {
+            cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cityID") as UITableViewCell
+        }
+        
+        //第三部，填充数据
+ 
+        
         var cityModel:CityModel = self.sectionArray[indexPath.section] as! CityModel
         var countryModelArray:NSMutableArray = cityModel.countryArray as NSMutableArray
         var countryModel:CountryModel = countryModelArray[indexPath.row] as! CountryModel
         
-        cell.textLabel?.text = countryModel.name as String
+        cell!.textLabel?.text = countryModel.name as String
         
-        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator     //箭头的指示器
+        cell!.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator     //箭头的指示器
 //        cell.accessoryType = UITableViewCellAccessoryType.Checkmark               //对勾指示器
 //        cell.accessoryType = UITableViewCellAccessoryType.DetailButton            //详细信息指示器
 //        cell.accessoryType = UITableViewCellAccessoryType.DetailDisclosureButton  //详细信息加箭头指示器
@@ -80,7 +88,7 @@ class CityTableViewController:UITableViewController,UITableViewDataSource,UITabl
 //        var view = UISwitch() //此处的UISwitch可以更换为任何UIView类
 //        cell.accessoryView = view
         
-        return cell
+        return cell!
     }
     
     //组头的内容
