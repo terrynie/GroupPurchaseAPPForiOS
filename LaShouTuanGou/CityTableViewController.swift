@@ -108,4 +108,31 @@ class CityTableViewController:UITableViewController,UITableViewDataSource,UITabl
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 44
     }
+    
+    //修改header
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        //设置header的背景颜色
+        var viewHeader = UIView()
+        viewHeader.frame = CGRectMake(15, 0, self.view.frame.width, 50) //设置frame的位置，大小
+        viewHeader.backgroundColor = UIColor.grayColor()
+        //设置header字体颜色
+        var label = UILabel()
+        label.frame = viewHeader.frame
+        //改变frame距离右端的距离
+        label.frame.origin.x = 15
+        label.text = (self.sectionArray[section] as! CityModel).name
+        label.textColor = UIColor.whiteColor()
+        label.font = UIFont.boldSystemFontOfSize(18)
+        
+        viewHeader.addSubview(label)
+        
+        return viewHeader
+    }
+    
+    //建立快速索引
+    override func sectionIndexTitlesForTableView(tableView: UITableView) -> [AnyObject]! {
+        return self.sectionArray.valueForKey("name") as! [AnyObject]
+    }
+    
 }
