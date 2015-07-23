@@ -70,8 +70,6 @@ class CityTableViewController:UITableViewController,UITableViewDataSource,UITabl
         }
         
         //第三部，填充数据
- 
-        
         var cityModel:CityModel = self.sectionArray[indexPath.section] as! CityModel
         var countryModelArray:NSMutableArray = cityModel.countryArray as NSMutableArray
         var countryModel:CountryModel = countryModelArray[indexPath.row] as! CountryModel
@@ -84,7 +82,7 @@ class CityTableViewController:UITableViewController,UITableViewDataSource,UITabl
 //        cell.accessoryType = UITableViewCellAccessoryType.DetailDisclosureButton  //详细信息加箭头指示器
 //        cell.accessoryType = UITableViewCellAccessoryType.None                    //默认
         
-        //自定义开关指示器
+//        自定义开关指示器
 //        var view = UISwitch() //此处的UISwitch可以更换为任何UIView类
 //        cell.accessoryView = view
         
@@ -133,6 +131,29 @@ class CityTableViewController:UITableViewController,UITableViewDataSource,UITabl
     //建立快速索引
     override func sectionIndexTitlesForTableView(tableView: UITableView) -> [AnyObject]! {
         return self.sectionArray.valueForKey("name") as! [AnyObject]
+    }
+    
+    //传递参数
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        var cityModel = self.sectionArray[indexPath.section] as? CityModel
+        var countryModel:CountryModel = (cityModel?.countryArray[indexPath.row] as? CountryModel)!
+        var cityName = countryModel.name
+        
+        //根据Segue的identifier执行操作 ， 跳转
+        self.performSegueWithIdentifier("cityID", sender: cityName)
+    }
+    
+    //
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var cityName :String = sender as! String
+        
+        var productViewController:ProductViewController = segue.destinationViewController as! ProductViewController
+        
+        //传递城市名称
+        productViewController.cityName = cityName
+        
+        
     }
     
 }
