@@ -65,38 +65,11 @@ class ProductViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     //
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        var productID:String = "productID"
         
-        //在缓冲区查找是否存在productID标识cell
-        var cell:ProductCell? = tableView.dequeueReusableCellWithIdentifier(productID) as? ProductCell
-        //如果cell存在，则不创建，不存在则创建
-        if cell == nil {
-            
-            cell = NSBundle.mainBundle().loadNibNamed("ProductCell", owner: nil, options: nil).last as? ProductCell
-            
-            
-//            以下注释掉内容为之前使用系统默认的cell时创建cell的方式
-//            默认，cell中只能加入一个UIImageView，一个textLabel，和一个指示器
-//            cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: productID)
-//            //可以比默认方式多增加一个subtitle
-//            cell = ProductCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: productID)
-//            //比默认方式多增加一个detailTextLabel
-//            cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: productID)
-//            //比默认方式少一个UIImage，
-//            cell = UITableViewCell(style: UITableViewCellStyle.Value2, reuseIdentifier: productID)
-        }
+        var cell:ProductCell = ProductCell.cellWithTableView(tableView)
         
-        //填充数据
-        var productInfo = self.productArray[indexPath.row] as! ProductInfo
-        cell?.title.text = productInfo.title
-        cell?.icon.image = UIImage(named: productInfo.icon)
-        cell?.star.image = UIImage(named: productInfo.star)
-        cell?.desc.text = productInfo.desc
-        
+        cell.productInfo = self.productArray[indexPath.row] as! ProductInfo
 
-//        cell?.textLabel?.text = productInfo.title
-//        cell?.imageView?.image = UIImage(named: productInfo.icon)
-//        cell?.detailTextLabel?.text = productInfo.desc
-        return cell!
+        return cell
     }
 }
