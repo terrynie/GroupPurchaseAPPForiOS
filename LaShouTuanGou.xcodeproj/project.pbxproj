@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE046E681B611EA100482B65 /* ProductFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE046E671B611EA100482B65 /* ProductFooterView.xib */; };
+		DE046E6A1B6121B100482B65 /* ProductFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE046E691B6121B100482B65 /* ProductFooterView.swift */; };
 		DE1088EB1B5FCE82007F48BF /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1088EA1B5FCE82007F48BF /* ProductViewController.swift */; };
 		DE164AA71B60734B005F5150 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE164AA61B60734B005F5150 /* ProductCell.xib */; };
 		DE164AA91B6076FE005F5150 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE164AA81B6076FE005F5150 /* ProductCell.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE046E671B611EA100482B65 /* ProductFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductFooterView.xib; sourceTree = "<group>"; };
+		DE046E691B6121B100482B65 /* ProductFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductFooterView.swift; sourceTree = "<group>"; };
 		DE1088EA1B5FCE82007F48BF /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		DE164AA61B60734B005F5150 /* ProductCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
 		DE164AA81B6076FE005F5150 /* ProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 			children = (
 				DE164AA61B60734B005F5150 /* ProductCell.xib */,
 				DE164AA81B6076FE005F5150 /* ProductCell.swift */,
+				DE046E671B611EA100482B65 /* ProductFooterView.xib */,
+				DE046E691B6121B100482B65 /* ProductFooterView.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -299,6 +305,7 @@
 				DEA643991B5DFA9700B56912 /* ChinaCity.plist in Resources */,
 				DEA643791B5DD41600B56912 /* LaunchScreen.xib in Resources */,
 				DEA6439D1B5DFA9700B56912 /* TongYiCiPinPai.plist in Resources */,
+				DE046E681B611EA100482B65 /* ProductFooterView.xib in Resources */,
 				DEA6439C1B5DFA9700B56912 /* TongYiCiCheXi.plist in Resources */,
 				DEA643761B5DD41600B56912 /* Images.xcassets in Resources */,
 			);
@@ -326,6 +333,7 @@
 				DEA6436F1B5DD41600B56912 /* AppDelegate.swift in Sources */,
 				DE164AA91B6076FE005F5150 /* ProductCell.swift in Sources */,
 				DEC29E421B5E4C2D00A21841 /* CountryModel.swift in Sources */,
+				DE046E6A1B6121B100482B65 /* ProductFooterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

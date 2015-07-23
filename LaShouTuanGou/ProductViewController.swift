@@ -25,6 +25,18 @@ class ProductViewController: UIViewController,UITableViewDataSource,UITableViewD
         self.productTableView.dataSource = self
         //初始化时设置tableview的高度
         self.productTableView.rowHeight = 80
+//        这两种写法相同，nil默认为根目录
+//        var nib:UINib = UINib(nibName: "ProductFooterView", bundle: nil)
+        var nib:UINib = UINib(nibName: "ProductFooterView", bundle: NSBundle.mainBundle())
+        //load the nib
+        var footerView:ProductFooterView = nib.instantiateWithOwner(nil, options: nil).last as! ProductFooterView
+        
+        self.productTableView.tableFooterView = footerView
+        
+        
+        
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -44,10 +56,7 @@ class ProductViewController: UIViewController,UITableViewDataSource,UITableViewD
                     
                     _productArray.addObject(productInfo)
                 }
-                
             }
-            
-            
             return self._productArray
         }
         
