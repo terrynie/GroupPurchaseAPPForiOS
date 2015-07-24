@@ -31,11 +31,8 @@ class ProductViewController: UIViewController,UITableViewDataSource,UITableViewD
         //load the nib
         var footerView:ProductFooterView = nib.instantiateWithOwner(nil, options: nil).last as! ProductFooterView
         
+        footerView.delegate = self
         self.productTableView.tableFooterView = footerView
-        
-        
-        
-        
         
     }
     
