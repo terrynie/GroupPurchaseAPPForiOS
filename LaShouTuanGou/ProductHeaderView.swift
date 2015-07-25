@@ -32,6 +32,26 @@ class ProductHeaderView: UIView {
         }
     }
     
+    var _scrollInfoArray: NSMutableArray!
+    var scrollInfoArray: NSMutableArray{
+        
+        get{
+            if (_scrollInfoArray == nil){
+                _scrollInfoArray = NSMutableArray()
+                var bundle = NSBundle.mainBundle().pathForResource("moviepics.plist", ofType: nil)!
+                
+                var dictArray = NSMutableArray(contentsOfFile: bundle)!
+                
+                for dict in dictArray {
+                    var tempScrollInfo = ScrollInfo(dict: dict as! NSMutableDictionary)
+                    _scrollInfoArray.addObject(tempScrollInfo)
+                }
+            }
+            return _scrollInfoArray
+        }
+    
+    }
+    
     
 }
 
