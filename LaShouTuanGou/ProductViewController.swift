@@ -34,6 +34,9 @@ class ProductViewController: UIViewController,UITableViewDataSource,UITableViewD
         footerView.delegate = self
         self.productTableView.tableFooterView = footerView
         
+        //load header view
+        self.productTableView.tableHeaderView = ProductHeaderView.productHeaderView
+        
     }
     
     override func didReceiveMemoryWarning() {

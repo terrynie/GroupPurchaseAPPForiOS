@@ -25,6 +25,8 @@
 		DEA6439B1B5DFA9700B56912 /* product.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEA643961B5DFA9700B56912 /* product.plist */; };
 		DEA6439C1B5DFA9700B56912 /* TongYiCiCheXi.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEA643971B5DFA9700B56912 /* TongYiCiCheXi.plist */; };
 		DEA6439D1B5DFA9700B56912 /* TongYiCiPinPai.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEA643981B5DFA9700B56912 /* TongYiCiPinPai.plist */; };
+		DEB9F2D81B6374EE00C482BD /* ProductHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEB9F2D71B6374EE00C482BD /* ProductHeaderView.xib */; };
+		DEB9F2DA1B637A8900C482BD /* ProductHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9F2D91B637A8900C482BD /* ProductHeaderView.swift */; };
 		DEC29E401B5E49C800A21841 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC29E3F1B5E49C800A21841 /* CityModel.swift */; };
 		DEC29E421B5E4C2D00A21841 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC29E411B5E4C2D00A21841 /* CountryModel.swift */; };
 /* End PBXBuildFile section */
@@ -62,6 +64,8 @@
 		DEA643961B5DFA9700B56912 /* product.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = product.plist; sourceTree = "<group>"; };
 		DEA643971B5DFA9700B56912 /* TongYiCiCheXi.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = TongYiCiCheXi.plist; sourceTree = "<group>"; };
 		DEA643981B5DFA9700B56912 /* TongYiCiPinPai.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = TongYiCiPinPai.plist; sourceTree = "<group>"; };
+		DEB9F2D71B6374EE00C482BD /* ProductHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductHeaderView.xib; sourceTree = "<group>"; };
+		DEB9F2D91B637A8900C482BD /* ProductHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductHeaderView.swift; sourceTree = "<group>"; };
 		DEC29E3F1B5E49C800A21841 /* CityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
 		DEC29E411B5E4C2D00A21841 /* CountryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,6 +121,8 @@
 				DE164AA81B6076FE005F5150 /* ProductCell.swift */,
 				DE046E671B611EA100482B65 /* ProductFooterView.xib */,
 				DE046E691B6121B100482B65 /* ProductFooterView.swift */,
+				DEB9F2D71B6374EE00C482BD /* ProductHeaderView.xib */,
+				DEB9F2D91B637A8900C482BD /* ProductHeaderView.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -301,6 +307,7 @@
 				DE164AA71B60734B005F5150 /* ProductCell.xib in Resources */,
 				DEA6439B1B5DFA9700B56912 /* product.plist in Resources */,
 				DEA643741B5DD41600B56912 /* Main.storyboard in Resources */,
+				DEB9F2D81B6374EE00C482BD /* ProductHeaderView.xib in Resources */,
 				DEA6439A1B5DFA9700B56912 /* moviepics.plist in Resources */,
 				DEA643991B5DFA9700B56912 /* ChinaCity.plist in Resources */,
 				DEA643791B5DD41600B56912 /* LaunchScreen.xib in Resources */,
@@ -330,6 +337,7 @@
 				DEC29E401B5E49C800A21841 /* CityModel.swift in Sources */,
 				DEA6438F1B5DDDF300B56912 /* CityTableViewController.swift in Sources */,
 				DEA643711B5DD41600B56912 /* ViewController.swift in Sources */,
+				DEB9F2DA1B637A8900C482BD /* ProductHeaderView.swift in Sources */,
 				DEA6436F1B5DD41600B56912 /* AppDelegate.swift in Sources */,
 				DE164AA91B6076FE005F5150 /* ProductCell.swift in Sources */,
 				DEC29E421B5E4C2D00A21841 /* CountryModel.swift in Sources */,
