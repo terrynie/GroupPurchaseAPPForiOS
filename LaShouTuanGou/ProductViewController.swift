@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ProductViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class ProductViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,ProductFooterViewDelegate {
     
     @IBOutlet weak var navItem : UINavigationItem!
     @IBOutlet weak var productTableView:UITableView!
@@ -78,4 +78,14 @@ class ProductViewController: UIViewController,UITableViewDataSource,UITableViewD
 
         return cell
     }
+    
+    
+    func refreshData(productInfo:ProductInfo){
+        self.productArray.addObject(productInfo)
+        //refresh
+        self.productTableView.reloadData()
+
+    }
+    
+    
 }

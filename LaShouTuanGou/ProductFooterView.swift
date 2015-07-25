@@ -8,6 +8,12 @@
 
 import Foundation
 import UIKit
+
+protocol  ProductFooterViewDelegate{
+    func refreshData(productInfo:ProductInfo)
+}
+
+
 class ProductFooterView: UIView {
     
     @IBOutlet weak var loadingMore: UIView!
@@ -18,7 +24,7 @@ class ProductFooterView: UIView {
     
     @IBOutlet weak var loadingLabel: UILabel!
     
-    var delegate :ProductViewController!
+    var delegate :ProductFooterViewDelegate!
     
     @IBAction func loadMore(sender: AnyObject) {
         //隐藏按钮
@@ -49,9 +55,7 @@ class ProductFooterView: UIView {
             () -> Void in
         
             var productInfo:ProductInfo = ProductInfo(dict: dict)
-            self.delegate.productArray.addObject(productInfo)
-            //refresh
-            self.delegate.productTableView.reloadData()
+            self.delegate.refreshData(productInfo)
             
             
             //重新显示按钮，并隐藏动画
