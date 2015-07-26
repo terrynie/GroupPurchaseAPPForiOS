@@ -32,8 +32,6 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="p1" destination="YiG-Uc-Cz6" id="298-9a-nfQ"/>
-                <outlet property="p2" destination="zWP-6F-GAL" id="iXg-zf-o03"/>
                 <outlet property="pageControl" destination="uLz-Gq-Gc7" id="6KZ-Kq-yhw"/>
                 <outlet property="scrollView" destination="Scu-4B-mGK" id="JsX-W4-lss"/>
             </connections>

@@ -29,23 +29,23 @@ class ProductCell: UITableViewCell {
             cell = NSBundle.mainBundle().loadNibNamed("ProductCell", owner: nil, options: nil).last as? ProductCell
             
             
-            //            以下注释掉内容为之前使用系统默认的cell时创建cell的方式
-            //            默认，cell中只能加入一个UIImageView，一个textLabel，和一个指示器
-            //            cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: productID)
-            //            //可以比默认方式多增加一个subtitle
-            //            cell = ProductCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: productID)
-            //            //比默认方式多增加一个detailTextLabel
-            //            cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: productID)
-            //            //比默认方式少一个UIImage，
-            //            cell = UITableViewCell(style: UITableViewCellStyle.Value2, reuseIdentifier: productID)
+//            以下注释掉内容为之前使用系统默认的cell时创建cell的方式
+//            默认，cell中只能加入一个UIImageView，一个textLabel，和一个指示器
+//            cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: productID)
+//            //可以比默认方式多增加一个subtitle
+//            cell = ProductCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: productID)
+//            //比默认方式多增加一个detailTextLabel
+//            cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: productID)
+//            //比默认方式少一个UIImage，
+//            cell = UITableViewCell(style: UITableViewCellStyle.Value2, reuseIdentifier: productID)
         }
         return cell!
     }
     
     
     var _productInfo:ProductInfo!
-    var productInfo:ProductInfo{
-        set(_productInfo){
+    var productInfo:ProductInfo {
+        set(_productInfo) {
             //填充数据
             self.title.text = _productInfo.title
             self.icon.image = UIImage(named: _productInfo.icon)
@@ -56,7 +56,7 @@ class ProductCell: UITableViewCell {
             //        cell?.imageView?.image = UIImage(named: productInfo.icon)
             //        cell?.detailTextLabel?.text = productInfo.desc
         }
-        get{
+        get {
             return self._productInfo
         }
 

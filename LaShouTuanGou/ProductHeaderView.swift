@@ -10,10 +10,7 @@ import Foundation
 import UIKit
 
 class ProductHeaderView: UIView {
-    
-    @IBOutlet weak var p1: UIImageView!
-    @IBOutlet weak var p2: UIImageView!
-    
+        
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var pageControl: UIPageControl!
@@ -22,7 +19,23 @@ class ProductHeaderView: UIView {
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator  = false
         scrollView.pagingEnabled = true
-        scrollView.contentSize = CGSize(width: 3*320, height: 128)
+//        scrollView.contentSize = CGSize(width: 3*320, height: 128)
+        var imgViewY: CGFloat = 0
+        var imgViewW: CGFloat = self.scrollView.frame.width
+        var imgViewH: CGFloat = self.scrollView.frame.height
+        
+        for (var i:Int = 0; i < self.scrollInfoArray.count; i++){
+            var scrollInfo:ScrollInfo = self.scrollInfoArray[i] as! ScrollInfo
+            var img = UIImage(named: scrollInfo.img)!
+            var imageView = UIImageView(image: img)
+            var imgViewX: CGFloat = imgViewW * CGFloat(i)
+        
+            imageView.frame = CGRectMake(imgViewX, imgViewY, imgViewW, imgViewH)
+            self.scrollView.addSubview(imageView)
+            
+        }
+        scrollView.contentSize = CGSize(width: imgViewW * CGFloat(self.scrollInfoArray.count), height: imgViewH)
+        
     }
     
     
