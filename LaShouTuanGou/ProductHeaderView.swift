@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ProductHeaderView: UIView {
+class ProductHeaderView: UIView, UIScrollViewDelegate {
         
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -19,6 +19,8 @@ class ProductHeaderView: UIView {
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator  = false
         scrollView.pagingEnabled = true
+        self.scrollView.delegate = self
+        
 //        scrollView.contentSize = CGSize(width: 3*320, height: 128)
         var imgViewY: CGFloat = 0
         var imgViewW: CGFloat = self.scrollView.frame.width
@@ -35,6 +37,9 @@ class ProductHeaderView: UIView {
             
         }
         scrollView.contentSize = CGSize(width: imgViewW * CGFloat(self.scrollInfoArray.count), height: imgViewH)
+        
+        //pageControl有多少页
+        self.pageControl.numberOfPages = self.scrollInfoArray.count
         
     }
     
@@ -63,6 +68,28 @@ class ProductHeaderView: UIView {
             return _scrollInfoArray
         }
     
+    }
+    
+    
+    //滚动时一直执行此方法
+    func scrollViewDidScroll(scrollView: UIScrollView){
+        
+        var currentPage = (self.scrollView.contentOffset.x + self.scrollView.frame.width * 0.5) / self.scrollView.frame.width
+        self.pageControl.currentPage = Int(currentPage)
+    }
+    
+    
+    //开始拖拽时执行
+    func scrollViewWillBeginDragging(scrollView: UIScrollView){
+        
+        
+        
+    }
+    
+    
+    //拖拽结束后执行
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool){
+        
     }
     
     
