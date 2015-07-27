@@ -20,6 +20,7 @@ class ProductHeaderView: UIView, UIScrollViewDelegate {
         scrollView.showsVerticalScrollIndicator  = false
         scrollView.pagingEnabled = true
         self.scrollView.delegate = self
+        self.addTimer()
         
 //        scrollView.contentSize = CGSize(width: 3*320, height: 128)
         var imgViewY: CGFloat = 0
@@ -42,6 +43,31 @@ class ProductHeaderView: UIView, UIScrollViewDelegate {
         self.pageControl.numberOfPages = self.scrollInfoArray.count
         
     }
+    
+    
+    
+    var timer:NSTimer!
+    //add Timer
+    func addTimer(){
+        var ti:NSTimeInterval = 2.0
+        NSTimer.scheduledTimerWithTimeInterval(ti, target: self, selector: "timerChange", userInfo: nil, repeats: true)
+        
+    }
+    
+    
+    //改变滚动图片
+    func timerChange(){
+        
+    }
+    
+    
+    //remove timer
+    func removeTimer(){
+        //remove timer
+        self.timer.invalidate()
+        self.timer = nil
+    }
+
     
     
     class var productHeaderView:ProductHeaderView{
@@ -82,14 +108,14 @@ class ProductHeaderView: UIView, UIScrollViewDelegate {
     //开始拖拽时执行
     func scrollViewWillBeginDragging(scrollView: UIScrollView){
         
-        
-        
+        self.removeTimer()
     }
     
     
     //拖拽结束后执行
     func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool){
         
+        self.addTimer()
     }
     
     
