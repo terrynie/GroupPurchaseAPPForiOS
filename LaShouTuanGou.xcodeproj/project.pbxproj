@@ -10,6 +10,9 @@
 		DE046E681B611EA100482B65 /* ProductFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE046E671B611EA100482B65 /* ProductFooterView.xib */; };
 		DE046E6A1B6121B100482B65 /* ProductFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE046E691B6121B100482B65 /* ProductFooterView.swift */; };
 		DE081CD61B63A4DE008E21F2 /* ScrollInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE081CD51B63A4DE008E21F2 /* ScrollInfo.swift */; };
+		DE0A40001B67AEE3001719C7 /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0A3FFF1B67AEE3001719C7 /* FoodViewController.swift */; };
+		DE0A40021B67AFB1001719C7 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0A40011B67AFB1001719C7 /* MovieViewController.swift */; };
+		DE0A40041B67AFDA001719C7 /* WeddingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0A40031B67AFDA001719C7 /* WeddingViewController.swift */; };
 		DE1088EB1B5FCE82007F48BF /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1088EA1B5FCE82007F48BF /* ProductViewController.swift */; };
 		DE164AA71B60734B005F5150 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE164AA61B60734B005F5150 /* ProductCell.xib */; };
 		DE164AA91B6076FE005F5150 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE164AA81B6076FE005F5150 /* ProductCell.swift */; };
@@ -46,6 +49,9 @@
 		DE046E671B611EA100482B65 /* ProductFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductFooterView.xib; sourceTree = "<group>"; };
 		DE046E691B6121B100482B65 /* ProductFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductFooterView.swift; sourceTree = "<group>"; };
 		DE081CD51B63A4DE008E21F2 /* ScrollInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollInfo.swift; sourceTree = "<group>"; };
+		DE0A3FFF1B67AEE3001719C7 /* FoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodViewController.swift; sourceTree = "<group>"; };
+		DE0A40011B67AFB1001719C7 /* MovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
+		DE0A40031B67AFDA001719C7 /* WeddingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeddingViewController.swift; sourceTree = "<group>"; };
 		DE1088EA1B5FCE82007F48BF /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		DE164AA61B60734B005F5150 /* ProductCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
 		DE164AA81B6076FE005F5150 /* ProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
@@ -90,6 +96,70 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE0A3FFB1B67AE7A001719C7 /* Food */ = {
+			isa = PBXGroup;
+			children = (
+				DE0A3FFE1B67AEA3001719C7 /* controller */,
+				DE0A3FFD1B67AE98001719C7 /* view */,
+				DE0A3FFC1B67AE88001719C7 /* model */,
+			);
+			name = Food;
+			sourceTree = "<group>";
+		};
+		DE0A3FFC1B67AE88001719C7 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		DE0A3FFD1B67AE98001719C7 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		DE0A3FFE1B67AEA3001719C7 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				DE0A3FFF1B67AEE3001719C7 /* FoodViewController.swift */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		DE0A40051B67B108001719C7 /* Movie */ = {
+			isa = PBXGroup;
+			children = (
+				DE0A40061B67B10F001719C7 /* controller */,
+			);
+			name = Movie;
+			sourceTree = "<group>";
+		};
+		DE0A40061B67B10F001719C7 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				DE0A40011B67AFB1001719C7 /* MovieViewController.swift */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		DE0A40071B67B121001719C7 /* Wedding */ = {
+			isa = PBXGroup;
+			children = (
+				DE0A40081B67B129001719C7 /* controller */,
+			);
+			name = Wedding;
+			sourceTree = "<group>";
+		};
+		DE0A40081B67B129001719C7 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				DE0A40031B67AFDA001719C7 /* WeddingViewController.swift */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
 		DE1088E61B5FCE06007F48BF /* production */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +221,9 @@
 		DEA6436B1B5DD41600B56912 /* LaShouTuanGou */ = {
 			isa = PBXGroup;
 			children = (
+				DE0A40071B67B121001719C7 /* Wedding */,
+				DE0A40051B67B108001719C7 /* Movie */,
+				DE0A3FFB1B67AE7A001719C7 /* Food */,
 				DE1088E61B5FCE06007F48BF /* production */,
 				DEA643901B5DDF0B00B56912 /* city */,
 				DEA6436E1B5DD41600B56912 /* AppDelegate.swift */,
@@ -335,6 +408,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE0A40021B67AFB1001719C7 /* MovieViewController.swift in Sources */,
 				DE1088EB1B5FCE82007F48BF /* ProductViewController.swift in Sources */,
 				DE164AAB1B607868005F5150 /* ProductInfo.swift in Sources */,
 				DEC29E401B5E49C800A21841 /* CityModel.swift in Sources */,
@@ -345,7 +419,9 @@
 				DE164AA91B6076FE005F5150 /* ProductCell.swift in Sources */,
 				DEC29E421B5E4C2D00A21841 /* CountryModel.swift in Sources */,
 				DE046E6A1B6121B100482B65 /* ProductFooterView.swift in Sources */,
+				DE0A40001B67AEE3001719C7 /* FoodViewController.swift in Sources */,
 				DE081CD61B63A4DE008E21F2 /* ScrollInfo.swift in Sources */,
+				DE0A40041B67AFDA001719C7 /* WeddingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

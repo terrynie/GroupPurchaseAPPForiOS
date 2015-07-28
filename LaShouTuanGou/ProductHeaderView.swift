@@ -37,6 +37,7 @@ class ProductHeaderView: UIView, UIScrollViewDelegate {
             self.scrollView.addSubview(imageView)
             
         }
+        //设置滚动范围
         scrollView.contentSize = CGSize(width: imgViewW * CGFloat(self.scrollInfoArray.count), height: imgViewH)
         
         //pageControl有多少页

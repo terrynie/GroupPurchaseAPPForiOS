@@ -74,11 +74,59 @@
                     <connections>
                         <outlet property="navItem" destination="VLf-fT-t1h" id="lg7-yQ-e9V"/>
                         <outlet property="productTableView" destination="6FJ-P2-cy8" id="jvg-RS-hEC"/>
+                        <segue destination="WQq-jD-h4k" kind="push" identifier="ProductID" id="XGD-An-lIr"/>
+                        <segue destination="TuN-OM-WvF" kind="push" identifier="MovieID" id="6Br-Zn-kCi"/>
+                        <segue destination="v8y-nR-Qxh" kind="push" identifier="WeddingID" id="Of6-cr-MED"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xhm-2W-2uz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="891" y="153"/>
+        </scene>
+        <!--婚礼-->
+        <scene sceneID="AN4-sj-xUI">
+            <objects>
+                <viewController id="v8y-nR-Qxh" customClass="WeddingViewController" customModule="LaShouTuanGou" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bnL-Rv-2Vq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="婚礼" id="aCy-iB-6Ro"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b4d-Hs-XFx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="891" y="904"/>
+        </scene>
+        <!--电影-->
+        <scene sceneID="P1b-ER-2lh">
+            <objects>
+                <viewController id="TuN-OM-WvF" customClass="MovieViewController" customModule="LaShouTuanGou" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5gM-oI-Rto">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="电影" id="cNF-7D-aXb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RrR-kb-J38" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1286" y="507"/>
+        </scene>
+        <!--美食-->
+        <scene sceneID="CaM-TK-BjL">
+            <objects>
+                <viewController id="WQq-jD-h4k" customClass="FoodViewController" customModule="LaShouTuanGou" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8zY-e6-9hV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="美食" id="W7f-lf-VY4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XXf-WO-FOe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1286" y="-117"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
