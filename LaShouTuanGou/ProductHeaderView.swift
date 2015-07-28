@@ -10,7 +10,11 @@ import Foundation
 import UIKit
 
 class ProductHeaderView: UIView, UIScrollViewDelegate {
-        
+    
+    var currentPage: Int = 0
+    
+    var timer:NSTimer = NSTimer()
+    
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var pageControl: UIPageControl!
@@ -22,7 +26,6 @@ class ProductHeaderView: UIView, UIScrollViewDelegate {
         self.scrollView.delegate = self
         self.addTimer()
         
-//        scrollView.contentSize = CGSize(width: 3*320, height: 128)
         var imgViewY: CGFloat = 0
         var imgViewW: CGFloat = self.scrollView.frame.width
         var imgViewH: CGFloat = self.scrollView.frame.height
@@ -46,8 +49,6 @@ class ProductHeaderView: UIView, UIScrollViewDelegate {
     }
     
     
-    
-    var timer:NSTimer!
     //add Timer
     func addTimer(){
         var ti:NSTimeInterval = 2.0
@@ -59,6 +60,32 @@ class ProductHeaderView: UIView, UIScrollViewDelegate {
     //改变滚动图片
     func timerChange(){
         
+        //pageViewControl 改变页码
+        
+        if currentPage >= self.pageControl.numberOfPages {
+            currentPage = 0
+        }
+        
+        self.pageControl.currentPage = currentPage
+        currentPage++
+        
+        //
+        if self.scrollView != nil {
+            if currentPage >= self.scrollInfoArray.count {
+                currentPage = 0
+            }
+            
+            var x: CGFloat = CGFloat(currentPage) * self.scrollView.frame.width
+            
+            var contentOffset:CGPoint = CGPoint(x: x, y: 0)
+            
+            self.scrollView.setContentOffset(contentOffset, animated: true)
+            
+            
+        }
+        
+        
+        
     }
     
     
@@ -66,7 +93,7 @@ class ProductHeaderView: UIView, UIScrollViewDelegate {
     func removeTimer(){
         //remove timer
         self.timer.invalidate()
-        self.timer = nil
+//        self.timer = nil
     }
 
     
@@ -103,6 +130,7 @@ class ProductHeaderView: UIView, UIScrollViewDelegate {
         
         var currentPage = (self.scrollView.contentOffset.x + self.scrollView.frame.width * 0.5) / self.scrollView.frame.width
         self.pageControl.currentPage = Int(currentPage)
+        self.currentPage = Int(currentPage)
     }
     
     
@@ -116,7 +144,7 @@ class ProductHeaderView: UIView, UIScrollViewDelegate {
     //拖拽结束后执行
     func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool){
         
-        self.addTimer()
+//        self.addTimer()
     }
     
     
