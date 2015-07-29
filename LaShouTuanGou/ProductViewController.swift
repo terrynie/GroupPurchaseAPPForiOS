@@ -91,4 +91,26 @@ class ProductViewController: UIViewController,UITableViewDataSource,UITableViewD
     }
     
     
+    //选择某一行
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        var productInfo: ProductInfo = self.productArray[indexPath.row] as! ProductInfo
+        
+        
+        if productInfo.type == ProductInfoType.food {
+            self.performSegueWithIdentifier("FoodID", sender: productInfo)
+        }else if productInfo.type == ProductInfoType.movie {
+            self.performSegueWithIdentifier("MovieID", sender: productInfo)
+        }else if productInfo.type == ProductInfoType.wedding {
+            self.performSegueWithIdentifier("WeddingID", sender: productInfo)
+        }
+        
+                
+        
+        
+        
+    }
+    
+    
+    
 }

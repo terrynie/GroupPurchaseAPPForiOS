@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>B1C8E2C4-0B57-4D1D-8168-6458D9C453F1</string>
 	<key>IDESourceControlProjectName</key>
-	<string>LaShouTuanGou</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>ED91F4C8796945FD2F0E6E4601C706B7367619A2</key>
 		<string>github.com:terry408911/GroupPurchaseAPPForiOS.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>LaShouTuanGou.xcodeproj</string>
+	<string>LaShouTuanGou.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>ED91F4C8796945FD2F0E6E4601C706B7367619A2</key>
