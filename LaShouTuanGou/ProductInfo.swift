@@ -42,16 +42,30 @@ class ProductInfo: NSObject {
         self.tel = dict["tel"] as! String
         
         
-//        //这跟上边的强制解包效果应该一样吧，还不如强制解包好
+        //这跟上边的强制解包效果应该一样吧，还不如强制解包好
         var type:String = dict["type"] as! String
         
-//        if type == "0" {
-//            self.type == ProductInfoType.food
-//        }else if type == "1" {
-//            self.type == ProductInfoType.movie
-//        }else if type == "2" {
-//            self.type == ProductInfoType.wedding
+        if type == "0" {
+            self.type = ProductInfoType.food
+        }else if type == "1" {
+            self.type = ProductInfoType.movie
+        }else {
+            self.type = ProductInfoType.wedding
+        }
+//        var type:String =  dict["type"] as! String;
+//        
+//        if type == "0"{
+//            self.type = ProductInfoType.food;
 //        }
+//        if type == "1"{
+//            self.type = ProductInfoType.movie;
+//            
+//        }
+//        if type == "2"{
+//            self.type = ProductInfoType.wedding;
+//            
+//        }
+
         
         
 
