@@ -36,7 +36,7 @@ class ProductFooterView: UIView {
         
         
         //加载更多数据
-        var dict: NSMutableDictionary = NSMutableDictionary()
+        let dict: NSMutableDictionary = NSMutableDictionary()
         dict["type"] = "0"
         dict["title"] = "川军本色/龙人居酒楼"
         dict["star"] = "ShopStar50"
@@ -50,11 +50,11 @@ class ProductFooterView: UIView {
         
         //添加延时效果。。。。很变态，为什么非要有这玩意呢，，，
         let delayInSeconds: Int64 = Int64(NSEC_PER_SEC.hashValue * 2)
-        var popTime:dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW,delayInSeconds)
+        let popTime:dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW,delayInSeconds)
         dispatch_after(popTime, dispatch_get_main_queue()){
             () -> Void in
         
-            var productInfo:ProductInfo = ProductInfo(dict: dict)
+            let productInfo:ProductInfo = ProductInfo(dict: dict)
             self.delegate.refreshData(productInfo)
             
             

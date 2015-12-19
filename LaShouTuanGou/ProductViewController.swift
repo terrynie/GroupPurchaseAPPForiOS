@@ -27,9 +27,9 @@ class ProductViewController: UIViewController,UITableViewDataSource,UITableViewD
         self.productTableView.rowHeight = 80
 //        这两种写法相同，nil默认为根目录
 //        var nib:UINib = UINib(nibName: "ProductFooterView", bundle: nil)
-        var nib:UINib = UINib(nibName: "ProductFooterView", bundle: NSBundle.mainBundle())
+        let nib:UINib = UINib(nibName: "ProductFooterView", bundle: NSBundle.mainBundle())
         //load the nib
-        var footerView:ProductFooterView = nib.instantiateWithOwner(nil, options: nil).last as! ProductFooterView
+        let footerView:ProductFooterView = nib.instantiateWithOwner(nil, options: nil).last as! ProductFooterView
         
         footerView.delegate = self
         self.productTableView.tableFooterView = footerView
@@ -48,11 +48,11 @@ class ProductViewController: UIViewController,UITableViewDataSource,UITableViewD
         get{
             if _productArray == nil{
                 _productArray = NSMutableArray()
-                var bundle = NSBundle.mainBundle()
-                var path = bundle.pathForResource("product.plist", ofType: nil)!
-                var tempArray = NSMutableArray(contentsOfFile: path)!
+                let bundle = NSBundle.mainBundle()
+                let path = bundle.pathForResource("product.plist", ofType: nil)!
+                let tempArray = NSMutableArray(contentsOfFile: path)!
                 for dict in tempArray {
-                    var productInfo: ProductInfo = ProductInfo(dict: dict as! NSMutableDictionary)
+                    let productInfo: ProductInfo = ProductInfo(dict: dict as! NSMutableDictionary)
                     
                     _productArray.addObject(productInfo)
                 }
@@ -75,7 +75,7 @@ class ProductViewController: UIViewController,UITableViewDataSource,UITableViewD
     //
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
-        var cell:ProductCell = ProductCell.cellWithTableView(tableView)
+        let cell:ProductCell = ProductCell.cellWithTableView(tableView)
         
         cell.productInfo = self.productArray[indexPath.row] as! ProductInfo
 
@@ -94,7 +94,7 @@ class ProductViewController: UIViewController,UITableViewDataSource,UITableViewD
     //选择某一行
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        var productInfo: ProductInfo = self.productArray[indexPath.row] as! ProductInfo
+        let productInfo: ProductInfo = self.productArray[indexPath.row] as! ProductInfo
         
         
         if productInfo.type == ProductInfoType.food {

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CityTableViewController:UITableViewController,UITableViewDataSource,UITableViewDelegate {
+class CityTableViewController:UITableViewController {
     
     var _sectionArray:NSMutableArray!
     var sectionArray:NSMutableArray{
@@ -17,15 +17,15 @@ class CityTableViewController:UITableViewController,UITableViewDataSource,UITabl
             
             if self._sectionArray == nil {
                 _sectionArray = NSMutableArray()
-                var bundler:NSBundle = NSBundle.mainBundle()
+                let bundler:NSBundle = NSBundle.mainBundle()
                 //通过查找，返回文件的路径
-                var path:String = bundler.pathForResource("ChinaCity.plist", ofType: nil)!
-                var tempArray = NSMutableArray(contentsOfFile: path)!
+                let path:String = bundler.pathForResource("ChinaCity.plist", ofType: nil)!
+                let tempArray = NSMutableArray(contentsOfFile: path)!
                 
                 //数组里边放的字典，
                 
                 for dict in tempArray {
-                    var cityModel:CityModel = CityModel(dict: dict as! NSMutableDictionary)
+                    let cityModel:CityModel = CityModel(dict: dict as! NSMutableDictionary)
                     _sectionArray.addObject(cityModel)
                 }
             }
@@ -51,8 +51,8 @@ class CityTableViewController:UITableViewController,UITableViewDataSource,UITabl
     //每组多少行
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
-        var cityModel = self.sectionArray[section] as! CityModel
-        var countryModel:NSMutableArray = cityModel.countryArray as NSMutableArray
+        let cityModel = self.sectionArray[section] as! CityModel
+        let countryModel:NSMutableArray = cityModel.countryArray as NSMutableArray
         //根据字典的长度确定每组的行数
         return countryModel.count
         
@@ -62,7 +62,7 @@ class CityTableViewController:UITableViewController,UITableViewDataSource,UITabl
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         //第一步，在缓冲中查找ID标示的cell
         let cityID:String = "cityID"
-        var cell:UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(cityID) as? UITableViewCell
+        var cell:UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(cityID)
         
         //判断cell是否存在，如果不存在进行创建
         if cell == nil {
@@ -70,9 +70,9 @@ class CityTableViewController:UITableViewController,UITableViewDataSource,UITabl
         }
         
         //第三部，填充数据
-        var cityModel:CityModel = self.sectionArray[indexPath.section] as! CityModel
-        var countryModelArray:NSMutableArray = cityModel.countryArray as NSMutableArray
-        var countryModel:CountryModel = countryModelArray[indexPath.row] as! CountryModel
+        let cityModel:CityModel = self.sectionArray[indexPath.section] as! CityModel
+        let countryModelArray:NSMutableArray = cityModel.countryArray as NSMutableArray
+        let countryModel:CountryModel = countryModelArray[indexPath.row] as! CountryModel
         
         cell!.textLabel?.text = countryModel.name as String
         
@@ -91,7 +91,7 @@ class CityTableViewController:UITableViewController,UITableViewDataSource,UITabl
     
     //组头的内容
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        var cityModel = self.sectionArray[section] as! CityModel
+        let cityModel = self.sectionArray[section] as! CityModel
         return cityModel.name
     
     }
@@ -111,11 +111,11 @@ class CityTableViewController:UITableViewController,UITableViewDataSource,UITabl
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         //设置header的背景颜色
-        var viewHeader = UIView()
+        let viewHeader = UIView()
         viewHeader.frame = CGRectMake(15, 0, self.view.frame.width, 50) //设置frame的位置，大小
         viewHeader.backgroundColor = UIColor.grayColor()
         //设置header字体颜色
-        var label = UILabel()
+        let label = UILabel()
         label.frame = viewHeader.frame
         //改变frame距离右端的距离
         label.frame.origin.x = 15
@@ -129,16 +129,16 @@ class CityTableViewController:UITableViewController,UITableViewDataSource,UITabl
     }
     
     //建立快速索引
-    override func sectionIndexTitlesForTableView(tableView: UITableView) -> [AnyObject]! {
-        return self.sectionArray.valueForKey("name") as! [AnyObject]
+    override func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]? {
+        return self.sectionArray.valueForKey("name") as? [String]
     }
     
     //传递参数
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        var cityModel = self.sectionArray[indexPath.section] as? CityModel
-        var countryModel:CountryModel = (cityModel?.countryArray[indexPath.row] as? CountryModel)!
-        var cityName = countryModel.name
+        let cityModel = self.sectionArray[indexPath.section] as? CityModel
+        let countryModel:CountryModel = (cityModel?.countryArray[indexPath.row] as? CountryModel)!
+        let cityName = countryModel.name
         
         //根据Segue的identifier执行操作 ， 跳转
         self.performSegueWithIdentifier("cityID", sender: cityName)
@@ -146,9 +146,9 @@ class CityTableViewController:UITableViewController,UITableViewDataSource,UITabl
     
     //
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var cityName :String = sender as! String
+        let cityName :String = sender as! String
         
-        var productViewController:ProductViewController = segue.destinationViewController as! ProductViewController
+        let productViewController:ProductViewController = segue.destinationViewController as! ProductViewController
         
         //传递城市名称
         productViewController.cityName = cityName

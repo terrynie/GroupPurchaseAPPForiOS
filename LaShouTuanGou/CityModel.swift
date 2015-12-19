@@ -23,11 +23,11 @@ class CityModel: NSObject {
         self.name = dict["name"] as? String
 //        countryArray = dict["list"] as? NSMutableArray
         
-        var tempArray:NSMutableArray = dict["list"] as! NSMutableArray
+        let tempArray:NSMutableArray = dict["list"] as! NSMutableArray
         
         countryArray = NSMutableArray()
         for dictSon in tempArray {
-            var countryModel:CountryModel = CountryModel(dict: dictSon as! NSMutableDictionary)
+            let countryModel:CountryModel = CountryModel(dict: dictSon as! NSMutableDictionary)
             countryArray.addObject(countryModel)
         }
         

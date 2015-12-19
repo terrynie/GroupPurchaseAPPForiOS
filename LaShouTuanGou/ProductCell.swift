@@ -20,7 +20,7 @@ class ProductCell: UITableViewCell {
     @IBOutlet weak var desc: UILabel!
     
     class func cellWithTableView(tableView:UITableView)->ProductCell{
-        var productID:String = "productID"
+        let productID:String = "productID"
         //在缓冲区查找是否存在productID标识cell
         var cell:ProductCell? = tableView.dequeueReusableCellWithIdentifier(productID) as? ProductCell
         //如果cell存在，则不创建，不存在则创建

@@ -26,15 +26,15 @@ class ProductHeaderView: UIView, UIScrollViewDelegate {
         self.scrollView.delegate = self
         self.addTimer()
         
-        var imgViewY: CGFloat = 0
-        var imgViewW: CGFloat = self.scrollView.frame.width
-        var imgViewH: CGFloat = self.scrollView.frame.height
+        let imgViewY: CGFloat = 0
+        let imgViewW: CGFloat = self.scrollView.frame.width
+        let imgViewH: CGFloat = self.scrollView.frame.height
         
         for (var i:Int = 0; i < self.scrollInfoArray.count; i++){
-            var scrollInfo:ScrollInfo = self.scrollInfoArray[i] as! ScrollInfo
-            var img = UIImage(named: scrollInfo.img)!
-            var imageView = UIImageView(image: img)
-            var imgViewX: CGFloat = imgViewW * CGFloat(i)
+            let scrollInfo:ScrollInfo = self.scrollInfoArray[i] as! ScrollInfo
+            let img = UIImage(named: scrollInfo.img)!
+            let imageView = UIImageView(image: img)
+            let imgViewX: CGFloat = imgViewW * CGFloat(i)
         
             imageView.frame = CGRectMake(imgViewX, imgViewY, imgViewW, imgViewH)
             self.scrollView.addSubview(imageView)
@@ -51,7 +51,7 @@ class ProductHeaderView: UIView, UIScrollViewDelegate {
     
     //add Timer
     func addTimer(){
-        var ti:NSTimeInterval = 2.0
+        let ti:NSTimeInterval = 2.0
         NSTimer.scheduledTimerWithTimeInterval(ti, target: self, selector: "timerChange", userInfo: nil, repeats: true)
         
     }
@@ -75,9 +75,9 @@ class ProductHeaderView: UIView, UIScrollViewDelegate {
                 currentPage = 0
             }
             
-            var x: CGFloat = CGFloat(currentPage) * self.scrollView.frame.width
+            let x: CGFloat = CGFloat(currentPage) * self.scrollView.frame.width
             
-            var contentOffset:CGPoint = CGPoint(x: x, y: 0)
+            let contentOffset:CGPoint = CGPoint(x: x, y: 0)
             
             self.scrollView.setContentOffset(contentOffset, animated: true)
             
@@ -110,12 +110,12 @@ class ProductHeaderView: UIView, UIScrollViewDelegate {
         get{
             if (_scrollInfoArray == nil){
                 _scrollInfoArray = NSMutableArray()
-                var bundle = NSBundle.mainBundle().pathForResource("moviepics.plist", ofType: nil)!
+                let bundle = NSBundle.mainBundle().pathForResource("moviepics.plist", ofType: nil)!
                 
-                var dictArray = NSMutableArray(contentsOfFile: bundle)!
+                let dictArray = NSMutableArray(contentsOfFile: bundle)!
                 
                 for dict in dictArray {
-                    var tempScrollInfo = ScrollInfo(dict: dict as! NSMutableDictionary)
+                    let tempScrollInfo = ScrollInfo(dict: dict as! NSMutableDictionary)
                     _scrollInfoArray.addObject(tempScrollInfo)
                 }
             }
@@ -128,7 +128,7 @@ class ProductHeaderView: UIView, UIScrollViewDelegate {
     //滚动时一直执行此方法
     func scrollViewDidScroll(scrollView: UIScrollView){
         
-        var currentPage = (self.scrollView.contentOffset.x + self.scrollView.frame.width * 0.5) / self.scrollView.frame.width
+        let currentPage = (self.scrollView.contentOffset.x + self.scrollView.frame.width * 0.5) / self.scrollView.frame.width
         self.pageControl.currentPage = Int(currentPage)
         self.currentPage = Int(currentPage)
     }
